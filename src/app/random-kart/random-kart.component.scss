@@ -1,0 +1,42 @@
+.ch-img {
+    width:128px;
+    height:128px;
+}
+.kr-img {
+    width:200px;
+    height:128px;
+}
+.random-selection {
+    height: 100%;
+    display: inline-block;
+    width: 450px;
+    background-image: url('https://i.imgur.com/fmUqxYm.jpg');
+    margin: 5px;
+    padding: 5px 10px;
+    border: 2px solid black;
+}
+p {
+    font-size: 17px;
+    font-family: sans-serif;
+    line-height: 25px;
+    color: white;
+    margin: 5px 0 0;
+    padding: 10px 10px 16px;
+    background: rgba(0,0,0,0.8);
+    min-height: 50px;
+    margin-bottom: 7.5px;
+}
+.kart .row {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+}
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
