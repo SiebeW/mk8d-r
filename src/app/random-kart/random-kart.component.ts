@@ -8,6 +8,12 @@ import { MarioKartData } from '../models/marioKartData.model';
   styleUrls: ['./random-kart.component.scss']
 })
 export class RandomKartComponent implements OnInit {
+  private playerImgs = {
+    p1: 'https://i.imgur.com/lyIvwVJ.png',
+    p2: 'https://i.imgur.com/xztxn4W.png',
+    p3: 'https://i.imgur.com/2r0rKF3.png',
+    p4: 'https://i.imgur.com/aaSTw5Q.png'
+  }
   private options = {
       allowMii:  false,
       bikesOnly: false,
@@ -43,7 +49,18 @@ export class RandomKartComponent implements OnInit {
   }
 
   private setPlayerNumberImage(i:number):string {  
-    return '../../assets/player' + i + '.svg';
+    switch (i) {
+        case 1: 
+            return this.playerImgs.p1;
+        case 2: 
+            return this.playerImgs.p2;
+        case 3: 
+            return this.playerImgs.p3;
+        case 4: 
+            return this.playerImgs.p4;
+        default:
+            return 'https://static.wikia.nocookie.net/nintendo/images/0/02/Question_Block_NSMB.png/revision/latest?cb=20151206055532&path-prefix=en'
+    }
   }
 
 
