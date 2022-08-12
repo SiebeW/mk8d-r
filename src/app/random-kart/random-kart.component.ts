@@ -43,7 +43,7 @@ export class RandomKartComponent implements OnInit {
   }
 
   private setPlayerNumberImage(i:number):string {  
-    return '../../assets/player' + i + '.png';
+    return '../../assets/player' + i + '.svg';
   }
 
 
