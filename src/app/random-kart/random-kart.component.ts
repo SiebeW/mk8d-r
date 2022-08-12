@@ -45,7 +45,6 @@ export class RandomKartComponent implements OnInit {
     this.playerNumberImg = this.setPlayerNumberImage(this.playerNumber);
     this.randomKart.kart = this.randomizeKart();
     this.randomKart.character = this.randomizeCharacter();
-    // this.randomKart.character = this.randomizeCharacter();
   }
 
   private setPlayerNumberImage(i:number):string {  
