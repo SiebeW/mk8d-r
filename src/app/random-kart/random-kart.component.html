@@ -1,13 +1,16 @@
 <div class="random-selection">
-    <p>
-        <strong class="character-strong">{{ this.randomKart.character.name }}</strong>
-        on a 
-        <strong class="kart-body-strong">{{ this.randomKart.kart.body }}</strong><span>&nbsp;</span><strong class="kart-type-strong">{{ this.randomKart.kart.type }}</strong>,
-        with
-        <strong class="kart-tires-strong">{{ this.randomKart.kart.tires }}</strong>
-        tires and the
-        <strong class="kart-glider-strong">{{ this.randomKart.kart.glider }}</strong>!
-    </p>
+    <div class="row">
+        <img class="player-number" src="{{this.playerNumberImg}}">
+        <p>
+            <strong class="character-strong">{{ this.randomKart.character.name }}</strong>
+            on a 
+            <strong class="kart-body-strong">{{ this.randomKart.kart.body }}</strong><span>&nbsp;</span><strong class="kart-type-strong">{{ this.randomKart.kart.type }}</strong>,
+            with
+            <strong class="kart-tires-strong">{{ this.randomKart.kart.tires }}</strong>
+            tires and the
+            <strong class="kart-glider-strong">{{ this.randomKart.kart.glider }}</strong>!
+        </p>
+    </div>
     <div class="kart">
         <div>
             <img class="ch-img" src="{{ this.randomKart.character.imageURL }}" style="padding:0px 36px;">

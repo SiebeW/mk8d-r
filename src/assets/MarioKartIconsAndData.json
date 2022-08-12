@@ -8,22 +8,22 @@
         {
             "Name": "Luigi",
             "HasAlternateColor": false,
-            "ImageURL": "https://mario.wiki.gallery/images/d/d9/MK8_Luigi_Icon.png"
+            "ImageURL": "https://mario.wiki.gallery/images/5/51/MK8_Luigi_Icon.png"
         },
         {
             "Name": "Peach",
             "HasAlternateColor": false,
-            "ImageURL": "https://mario.wiki.gallery/images/d/d9/MK8_Peach_Icon.png"
+            "ImageURL": "https://mario.wiki.gallery/images/c/c2/MK8_Peach_Icon.png"
         },
         {
             "Name": "Daisy",
             "HasAlternateColor": false,
-            "ImageURL": "https://mario.wiki.gallery/images/d/d9/MK8_Daisy_Icon.png"
+            "ImageURL": "https://mario.wiki.gallery/images/3/32/MK8_Daisy_Icon.png"
         },
         {
             "Name": "Rosalina",
             "HasAlternateColor": false,
-            "ImageURL": "https://mario.wiki.gallery/images/d/d9/MK8_Rosalina_Icon.png"
+            "ImageURL": "https://mario.wiki.gallery/images/8/89/MK8_Rosalina_Icon.png"
         },
         {
             "Name": "Mario",
@@ -134,6 +134,37 @@
                 {
                     "Name":"Yellow",
                     "ImageURL":"https://mario.wiki.gallery/images/d/d3/MK8_Yellow_Shy_Guy_Icon.png"
+                }
+            ]
+        },
+        {
+            "Name": "Inkling",
+            "ImageURL": "https://mario.wiki.gallery/images/b/b9/MK8DX_Female_Inkling_Icon.png",
+            "HasAlternateColor": true,
+            "AltColors": [
+                {
+                    "Name":"Orange Girl",
+                    "ImageURL":"https://mario.wiki.gallery/images/b/b9/MK8DX_Female_Inkling_Icon.png"
+                },
+                {
+                    "Name":"Lime Girl",
+                    "ImageURL":"https://mario.wiki.gallery/images/a/a8/MK8D_Green_Inkling_Icon.png"
+                },
+                {
+                    "Name":"Magenta Girl",
+                    "ImageURL":"https://mario.wiki.gallery/images/1/14/MK8D_Pink_Inkling_Icon.png"
+                },
+                {
+                    "Name":"Blue Boy",
+                    "ImageURL":"https://mario.wiki.gallery/images/3/3c/MK8DX_Male_Inkling_Icon.png"
+                },
+                {
+                    "Name":"Purple Boy",
+                    "ImageURL":"https://mario.wiki.gallery/images/b/ba/MK8D_Purple_Inkling_Icon.png"
+                },
+                {
+                    "Name":"Teal Boy",
+                    "ImageURL":"https://mario.wiki.gallery/images/e/e6/MK8D_Cyan_Inkling_Icon.png"
                 }
             ]
         },
@@ -258,7 +289,7 @@
                 },
                 {
                     "Name":"Breath of the Wild",
-                    "ImageURL":"https://i.imgur.com/zNGUUAL.png"
+                    "ImageURL":"https://mario.wiki.gallery/images/9/9e/MK8D_BotW_Link_Icon.png"
                 }
             ]
         },
@@ -291,14 +322,34 @@
     "Vehicles": {
         "Bodies": [
             {
-                "Name": "Standard Kart",
+                "Name": "Standard",
                 "Type": "Kart",
                 "ImageURL": "https://mario.wiki.gallery/images/0/05/StandardKartBodyMK8.png"
+            },
+            {
+                "Name": "Gold Standard",
+                "Type": "Kart",
+                "ImageURL": "https://mario.wiki.gallery/images/f/fe/Gold_Standard.png"
+            },
+            {
+                "Name": "Standard",
+                "Type": "Bike",
+                "ImageURL": "https://mario.wiki.gallery/images/8/84/StandardBikeBodyMK8.png"
+            },
+            {
+                "Name": "Standard ATV",
+                "Type": "ATV",
+                "ImageURL": "https://mario.wiki.gallery/images/2/23/StandardATVBodyMK8.png"
             },
             {
                 "Name": "Pipe Frame",
                 "Type": "Kart",
                 "ImageURL": "https://mario.wiki.gallery/images/d/d1/PipeFrameBodyMK8.png"
+            },
+            {
+                "Name": "Koopa Clown",
+                "Type": "Kart",
+                "ImageURL": "https://mario.wiki.gallery/images/7/70/MK8DX_Koopa_Clown.png"
             },
             {
                 "Name": "Mach 8",
@@ -316,12 +367,17 @@
                 "ImageURL": "https://mario.wiki.gallery/images/f/f4/CatCruiserBodyMK8.png"
             },
             {
+                "Name": "B Dasher",
+                "Type": "Kart",
+                "ImageURL": "https://mario.wiki.gallery/images/1/15/ZeldaMK8Bdasher.png"
+            },
+            {
                 "Name": "Circuit Special",
                 "Type": "Kart",
                 "ImageURL": "https://mario.wiki.gallery/images/6/6c/CircuitSpecialBodyMK8.png"
             },
             {
-                "Name": "Tri Speeder",
+                "Name": "Tri-Speeder",
                 "Type": "Kart",
                 "ImageURL": "https://mario.wiki.gallery/images/5/56/TrispeederBodyMK8.png"
             },
@@ -356,9 +412,14 @@
                 "ImageURL": "https://mario.wiki.gallery/images/f/f8/SportsCoupeMK8.png"
             },
             {
-                "Name": "Gold Standard",
-                "Type": "Kart",
-                "ImageURL": "https://mario.wiki.gallery/images/f/fe/Gold_Standard.png"
+                "Name": "Sports",
+                "Type": "Bike",
+                "ImageURL": "https://mario.wiki.gallery/images/f/fe/SportBikeBodyMK8.png"
+            },
+            {
+                "Name": "Inkstriker",
+                "Type": "ATV",
+                "ImageURL": "https://mario.wiki.gallery/images/e/eb/MK8DX_Inkstriker.png"
             },
             {
                 "Name": "GLA",
@@ -386,7 +447,7 @@
                 "ImageURL": "https://mario.wiki.gallery/images/1/15/ZeldaMK8Bdasher.png"
             },
             {
-                "Name": "Tanooki Kart",
+                "Name": "Tanooki",
                 "Type": "Kart",
                 "ImageURL": "https://mario.wiki.gallery/images/7/76/MK8_Tanooki_Buggy_Sprite.png"
             },
@@ -399,11 +460,6 @@
                 "Name": "P-Wing",
                 "Type": "Kart",
                 "ImageURL": "https://mario.wiki.gallery/images/c/cd/MK8PWing.png"
-            },
-            {
-                "Name": "Standard Bike",
-                "Type": "Bike",
-                "ImageURL": "https://mario.wiki.gallery/images/8/84/StandardBikeBodyMK8.png"
             },
             {
                 "Name": "Comet",
@@ -436,12 +492,12 @@
                 "ImageURL": "https://mario.wiki.gallery/images/1/18/MrScootyBodyMK8.png"
             },
             {
-                "Name": "Jet Bike",
+                "Name": "Jet",
                 "Type": "Bike",
                 "ImageURL": "https://mario.wiki.gallery/images/1/12/JetBikeBodyMK8.png"
             },
             {
-                "Name": "Yoshi Bike",
+                "Name": "Yoshi",
                 "Type": "Bike",
                 "ImageURL": "https://mario.wiki.gallery/images/6/62/YoshiBikeBodyMK8.png"
             },
@@ -451,14 +507,14 @@
                 "ImageURL": "https://mario.wiki.gallery/images/8/8a/MK8MasterCycle.png"
             },
             {
+                "Name": "Master Cycle Zero",
+                "Type": "Bike",
+                "ImageURL": "https://mario.wiki.gallery/images/2/26/MK8D_Master_Cycle_Zero.png"
+            },
+            {
                 "Name": "City Tripper",
                 "Type": "Bike",
                 "ImageURL": "https://mario.wiki.gallery/images/b/be/MK8_Light-Green_City_Tripper.png"
-            },
-            {
-                "Name": "Standard ATV",
-                "Type": "ATV",
-                "ImageURL": "https://mario.wiki.gallery/images/2/23/StandardATVBodyMK8.png"
             },
             {
                 "Name": "Wild Wiggler",
@@ -474,6 +530,11 @@
                 "Name": "Bone Rattler",
                 "Type": "ATV",
                 "ImageURL": "https://mario.wiki.gallery/images/0/0a/MK8BoneRattler.png"
+            },
+            {
+                "Name": "Splat Buggy",
+                "Type": "ATV",
+                "ImageURL": "https://mario.wiki.gallery/images/6/63/MK8DX_Splat_Buggy.png"
             }
         ],
         "Tires": [
@@ -546,7 +607,7 @@
                 "ImageURL":"https://mario.wiki.gallery/images/4/48/Retro_Off-Road.png"
             },
             {
-                "Name":"Gold",
+                "Name":"Gold Standard",
                 "ImageURL":"https://mario.wiki.gallery/images/5/52/Gold_Tires_MK8.png"
             },
             {
@@ -558,6 +619,10 @@
                 "ImageURL":"https://mario.wiki.gallery/images/9/9d/MK8-TriforceTires.png"
             },
             {
+                "Name":"Ancient",
+                "ImageURL":"https://mario.wiki.gallery/images/d/d5/MK8D_Ancient_Tires.png"
+            },
+            {
                 "Name":"Leaf",
                 "ImageURL":"https://mario.wiki.gallery/images/f/f9/Leaf_Tires_MK8.png"
             }
@@ -565,59 +630,63 @@
         "Gliders": [
             {
                 "Name":"Super Glider",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/a/a8/SuperGliderMK8.png/120px-SuperGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/a/a8/SuperGliderMK8.png"
             },
             {
                 "Name":"Cloud Glider",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/8/84/Cloud_Glider.png/120px-Cloud_Glider.png"
+                "ImageURL":"https://mario.wiki.gallery/images/8/84/Cloud_Glider.png"
             },
             {
                 "Name":"Wario Wing",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/a/ae/WarioWingMK8.png/120px-WarioWingMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/a/ae/WarioWingMK8.png"
             },
             {
                 "Name":"Waddle Wing",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/e/ef/WaddleWingMK8.png/120px-WaddleWingMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/e/ef/WaddleWingMK8.png"
             },
             {
                 "Name":"Peach Parasol",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/6/6e/PeachParasolGliderMK8.png/120px-PeachParasolGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/6/6e/PeachParasolGliderMK8.png"
             },
             {
                 "Name":"Parachute",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/d/dd/ParachuteGliderMK8.png/120px-ParachuteGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/d/dd/ParachuteGliderMK8.png"
             },
             {
                 "Name":"Parafoil",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/c/c4/ParafoilGliderMK8.png/120px-ParafoilGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/c/c4/ParafoilGliderMK8.png"
             },
             {
                 "Name":"Flower Glider",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/b/b3/FlowerGliderMK8.png/120px-FlowerGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/b/b3/FlowerGliderMK8.png"
             },
             {
                 "Name":"Bowser Kite",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/f/f7/BowserKiteMK8.png/120px-BowserKiteMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/f/f7/BowserKiteMK8.png"
             },
             {
                 "Name":"Plane Glider",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/c/ca/PlaneGliderMK8.png/120px-PlaneGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/c/ca/PlaneGliderMK8.png"
             },
             {
                 "Name":"MKTV Parafoil",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/9/96/MKTVParafoilGliderMK8.png/120px-MKTVParafoilGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/9/96/MKTVParafoilGliderMK8.png"
             },
             {
                 "Name":"Gold Glider",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/1/18/GoldGliderMK8.png/120px-GoldGliderMK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/1/18/GoldGliderMK8.png"
             },
             {
                 "Name":"Hylian Kite",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/9/9c/MK8-HylianKite.png/120px-MK8-HylianKite.png"
+                "ImageURL":"https://mario.wiki.gallery/images/9/9c/MK8-HylianKite.png"
+            },
+            {
+                "Name":"Paraglider",
+                "ImageURL":"https://mario.wiki.gallery/images/3/39/MK8D_Paraglider.png"
             },
             {
                 "Name":"Paper Glider",
-                "ImageURL":"https://mario.wiki.gallery/images/thumb/0/0e/PaperGliderIcon-MK8.png/120px-PaperGliderIcon-MK8.png"
+                "ImageURL":"https://mario.wiki.gallery/images/0/0e/PaperGliderIcon-MK8.png"
             }
         ]
     }

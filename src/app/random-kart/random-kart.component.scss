@@ -6,7 +6,17 @@
     width:200px;
     height:128px;
 }
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.player-number {
+    width:65px;
+    height:65px;
+    padding: 7.5px 10px 0 0 ;
+}
 .random-selection {
+    position: relative;
     height: 100%;
     display: inline-block;
     width: 450px;
