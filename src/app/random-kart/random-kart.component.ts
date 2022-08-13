@@ -22,7 +22,9 @@ export class RandomKartComponent implements OnInit {
         allowMii:  false,
         allowBikes: true,
         allowKarts: true,
-        allowQuads: true
+        allowQuads: true,
+        allowGolds: true,
+        allowDuplicates: true
     };
     public randomKart = {
         character: {
