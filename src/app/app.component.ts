@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-declare const VERSION: string;
 
 @Component({
   selector: 'app-root',
