@@ -317,6 +317,50 @@
             "Name": "Dry Bowser",
             "HasAlternateColor": false,
             "ImageURL": "https://mario.wiki.gallery/images/2/29/MK8_Dry_Bowser_Icon.png"
+        },
+        {
+            "Name": "Birdo",
+            "ImageURL": "https://mario.wiki.gallery/images/f/f6/MK8D_Birdo_Icon.png",
+            "HasAlternateColor": true,
+            "AltColors": [
+                {
+                    "Name":"Red",
+                    "ImageURL":"https://mario.wiki.gallery/images/5/5d/MK8D_Birdo_Red_Icon.png"
+                },
+                {
+                    "Name":"Green",
+                    "ImageURL":"https://mario.wiki.gallery/images/2/2d/MK8D_Birdo_Green_Icon.png"
+                },
+                {
+                    "Name":"Blue",
+                    "ImageURL":"https://mario.wiki.gallery/images/9/98/MK8D_Birdo_Blue_Icon.png"
+                },
+                {
+                    "Name":"Light Blue",
+                    "ImageURL":"https://mario.wiki.gallery/images/3/3c/MK8D_Birdo_Light-Blue_Icon.png"
+                },
+                {
+                    "Name":"Pink",
+                    "ImageURL":"https://mario.wiki.gallery/images/f/f6/MK8D_Birdo_Icon.png"
+                    
+                },
+                {
+                    "Name":"Black",
+                    "ImageURL":"https://mario.wiki.gallery/images/8/8d/MK8D_Birdo_Black_Icon.png"                    
+                },
+                {
+                    "Name":"White",
+                    "ImageURL":"https://mario.wiki.gallery/images/6/6a/MK8D_Birdo_White_Icon.png"
+                },
+                {
+                    "Name":"Orange",
+                    "ImageURL":"https://mario.wiki.gallery/images/7/76/MK8D_Birdo_Orange_Icon.png"
+                },
+                {
+                    "Name":"Yellow",
+                    "ImageURL":"https://mario.wiki.gallery/images/2/28/MK8D_Birdo_Yellow_Icon.png"
+                }
+            ]
         }
     ],
     "Vehicles": {
