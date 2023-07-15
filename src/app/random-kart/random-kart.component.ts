@@ -44,6 +44,9 @@ export class RandomKartComponent implements OnInit {
     private data: MarioKartData = MarioKartJson;
     public playerNumberImg = '';
 
+    // player number character name
+    private takenCharacters: string[] = [];
+
     @Input() playerNumber: number = 0;
 
     constructor(private optionsService: OptionsService) { }
@@ -52,6 +55,18 @@ export class RandomKartComponent implements OnInit {
         this.optionsService.options.pipe(takeUntil(this.unsubscribeSubject)).subscribe(o => {
             this.options = o;
         });
+        this.optionsService.player1Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p1c => {
+            this.takenCharacters.push(p1c);
+        })
+        this.optionsService.player2Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p2c => {
+            this.takenCharacters.push(p2c);
+        })
+        this.optionsService.player3Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p3c => {
+            this.takenCharacters.push(p3c);
+        })
+        this.optionsService.player4Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p4c => {
+            this.takenCharacters.push(p4c);
+        })
         this.playerNumberImg = this.setPlayerNumberImage(this.playerNumber);
         this.randomKart.kart = this.randomizeKart();
         this.randomKart.character = this.randomizeCharacter();
@@ -117,6 +132,7 @@ export class RandomKartComponent implements OnInit {
             }
             characterInvalid = this.checkCharacterValidity(character);
         }
+        this.optionsService.CharacterSelected(this.playerNumber,character.name);
         return character;
     }
 
@@ -126,6 +142,9 @@ export class RandomKartComponent implements OnInit {
             if (character.name == "Mii") {
                 invalid = true;
             }
+        }
+        if (this.takenCharacters.indexOf(character.name) > 0) {
+            invalid = true;
         }
         return invalid;
     }
