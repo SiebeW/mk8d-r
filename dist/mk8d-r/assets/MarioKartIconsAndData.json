@@ -319,6 +319,21 @@
             "ImageURL": "https://mario.wiki.gallery/images/2/29/MK8_Dry_Bowser_Icon.png"
         },
         {
+            "Name": "Petey Piranha",
+            "HasAlternateColor": false,
+            "ImageURL": "https://mario.wiki.gallery/images/8/86/MK8DX_Petey_Piranha_Icon.png"
+        },
+        {
+            "Name": "Wiggler",
+            "HasAlternateColor": false,
+            "ImageURL": "https://mario.wiki.gallery/images/7/7e/MK8DX_Wiggler_Icon.png"
+        },
+        {
+            "Name": "Kamek",
+            "HasAlternateColor": false,
+            "ImageURL": "https://mario.wiki.gallery/images/0/00/MK8DX_Kamek_Icon.png"
+        },
+        {
             "Name": "Birdo",
             "ImageURL": "https://mario.wiki.gallery/images/f/f6/MK8D_Birdo_Icon.png",
             "HasAlternateColor": true,
