@@ -1,37 +1,35 @@
-interface Character {
-    Name: string;
-    HasAlternateColor: boolean;
-    ImageURL: string;
-    AltColors?: AltColor[];
-  }
-  
-  interface AltColor {
-    Name: string;
-    ImageURL: string;
+  import { Base } from "../models/base.model.js";
+
+
+  interface IVehiclePart {
+    name: string;
+    imageURL: string;
+    type?: string;
   }
 
   interface Vehicles {
-    Bodies: VehicleBody[];
-    Tires: VehicleComponent[];
-    Gliders: VehicleComponent[];
-  }
-  
-  interface VehicleBody {
-    Name: string;
-    ImageURL: string;
-    Type: string;
-  }
-
-  interface VehicleComponent {
-    Name: string;
-    ImageURL: string;
+    bodies: IVehiclePart[];
+    tires: IVehiclePart[];
+    gliders: IVehiclePart[];
   }
   
   export class MarioKartData {
-    public Characters: Character[] = [];
-    public Vehicles: Vehicles = {Bodies: [], Tires: [], Gliders: []};
+    public characters: Base[] = [];
+    public vehicles: Vehicles = {bodies: [], tires: [], gliders: []};
 
-    constructor(Characters: Character[], Vehicles: Vehicles) {
-      Object.assign(this, Characters, Vehicles);
+    constructor(characters: Base[], vehicles: Vehicles) {
+      Object.assign(this, characters, vehicles);
     }
   }
+
+
+export class VehiclePart {
+  public name: string = '';
+  public imageURL: string = '';
+  public type: string = '';
+
+  constructor(vehiclePart: VehiclePart) {
+      Object.assign(this, vehiclePart);
+    }
+  
+}

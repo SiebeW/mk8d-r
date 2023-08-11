@@ -2,13 +2,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { OptionsService } from '../services/options.service';
 import MarioKartJson from '../../assets/MarioKartIconsAndData.json';
-import { MarioKartData } from '../models/marioKartData.model';
+import { MarioKartData, VehiclePart } from '../models/marioKartData.model';
 import { Options } from '../models/options.model';
+import { Selection } from '../models/selection.model'
+import { Base } from '../models/base.model';
 
 @Component({
-  selector: 'app-random-kart',
-  templateUrl: './random-kart.component.html',
-  styleUrls: ['./random-kart.component.scss']
+    selector: 'app-random-kart',
+    templateUrl: './random-kart.component.html',
+    styleUrls: ['./random-kart.component.scss']
 })
 export class RandomKartComponent implements OnInit {
     private unsubscribeSubject: Subject<boolean> = new Subject<boolean>;
@@ -19,33 +21,32 @@ export class RandomKartComponent implements OnInit {
         p4: 'https://i.imgur.com/aaSTw5Q.png'
     }
     private options: Options = {
-        allowMii:  false,
+        allowMii: false,
         allowBikes: true,
         allowKarts: true,
         allowQuads: true,
-        allowGolds: true,
-        allowDuplicates: true
+        allowGolds: true
     };
-    public randomKart = {
+    public randomKart: Selection = {
         character: {
-        name: "",
-        imageURL: ""
+            name: "",
+            imageURL: ""
         },
         kart: {
-        type: "",
-        body: "",
-        bodyURL: "",
-        tires: "",
-        tiresURL: "",
-        glider: "",
-        gliderURL: ""
+            type: "",
+            body: "",
+            bodyURL: "",
+            tires: "",
+            tiresURL: "",
+            glider: "",
+            gliderURL: ""
         }
     };
     private data: MarioKartData = MarioKartJson;
     public playerNumberImg = '';
 
     // player number character name
-    private takenCharacters: string[] = [];
+    private selections: Selection[] = [];
 
     @Input() playerNumber: number = 0;
 
@@ -55,104 +56,98 @@ export class RandomKartComponent implements OnInit {
         this.optionsService.options.pipe(takeUntil(this.unsubscribeSubject)).subscribe(o => {
             this.options = o;
         });
-        this.optionsService.player1Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p1c => {
-            this.takenCharacters.push(p1c);
-        })
-        this.optionsService.player2Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p2c => {
-            this.takenCharacters.push(p2c);
-        })
-        this.optionsService.player3Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p3c => {
-            this.takenCharacters.push(p3c);
-        })
-        this.optionsService.player4Character.pipe(takeUntil(this.unsubscribeSubject)).subscribe(p4c => {
-            this.takenCharacters.push(p4c);
-        })
-        this.playerNumberImg = this.setPlayerNumberImage(this.playerNumber);
-        this.randomKart.kart = this.randomizeKart();
-        this.randomKart.character = this.randomizeCharacter();
+        this.optionsService.selectionsArray.pipe(takeUntil(this.unsubscribeSubject)).subscribe((sel: Selection[]) => {
+            this.selections = sel;
+            this.generateSelection();
+        });
+        this.playerNumberImg = eval('this.playerImgs.p' + this.playerNumber);
+        this.generateSelection();
     };
     ngOnDestroy() {
         this.unsubscribeSubject.next(true);
         this.unsubscribeSubject.unsubscribe;
     };
 
-    private setPlayerNumberImage(i:number):string {  
-        switch (i) {
-            case 1: 
-                return this.playerImgs.p1;
-            case 2: 
-                return this.playerImgs.p2;
-            case 3: 
-                return this.playerImgs.p3;
-            case 4: 
-                return this.playerImgs.p4;
-            default:
-                return 'https://i.imgur.com/aTUvPmT.png'
+    private generateSelection() {
+        if (this.selections.length == this.playerNumber - 1) {
+            let selection = this.randomKart;
+            this.randomKart.kart = this.randomizeKart();
+            this.randomKart.character = this.randomizeCharacter();
+            selection = this.randomKart;
+            this.optionsService.selectionMade(this.playerNumber,selection);
         }
     }
 
-
     private randomizeKart() {
-        const body = this.data.Vehicles.Bodies[Math.floor(Math.random() * this.data.Vehicles.Bodies.length)];
-        const tire = this.data.Vehicles.Tires[Math.floor(Math.random() * this.data.Vehicles.Tires.length)];
-        const glider = this.data.Vehicles.Gliders[Math.floor(Math.random() * this.data.Vehicles.Gliders.length)];
+
+        let body = this.getKartComponent('body','bodies');
+        let tire = this.getKartComponent('tires','tires');
+        let glider = this.getKartComponent('glider','gliders');
+
         const kart = {
-        type: body.Type,
-        body: body.Name,
-        bodyURL: body.ImageURL,
-        tires: tire.Name,
-        tiresURL: tire.ImageURL,
-        glider: glider.Name,
-        gliderURL: glider.ImageURL
+            type: body.type,
+            body: body.name,
+            bodyURL: body.imageURL,
+            tires: tire.name,
+            tiresURL: tire.imageURL,
+            glider: glider.name,
+            gliderURL: glider.imageURL
         };
         return kart;
     }
 
+    private getKartComponent(part:string, plural:string){
+        let component:(VehiclePart);
+        component = eval('this.data.vehicles.' + plural + '[Math.floor(Math.random() * this.data.vehicles.' + plural + '.length)]');
+        let valid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? false : true;
+        while (!valid) {
+            console.log('Duplicate found: ', component.name)
+            component = eval('this.data.vehicles.' + plural + '[Math.floor(Math.random() * this.data.vehicles.' + plural + '.length)]');
+            valid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? false : true;
+        }
+        return component;
+    }
+
     private randomizeCharacter() {
         let characterInvalid = true;
-                
+
         let character = {
-        name: '',
-        imageURL: ''
+            name: '',
+            imageURL: ''
         };
         while (characterInvalid) {
-            const randomNumber = Math.floor(Math.random() * this.data.Characters.length)
-            const randomCharacterObject = this.data.Characters[randomNumber]
-            if (randomCharacterObject.HasAlternateColor && randomCharacterObject.AltColors != null) {
-                const i = Math.floor(Math.random() * randomCharacterObject.AltColors.length)
-                character = {  
-                    name: randomCharacterObject.AltColors[i].Name + ' ' + randomCharacterObject.Name,
-                    imageURL: randomCharacterObject.AltColors[i].ImageURL
-                };      
-            } else {
-                character = {
-                    name: randomCharacterObject.Name,
-                    imageURL: randomCharacterObject.ImageURL
+            const randomNumber = Math.floor(Math.random() * this.data.characters.length)
+            const randomCharacterObject = this.data.characters[randomNumber]
+            characterInvalid = this.checkCharacterValidity(randomCharacterObject);
+            if (!characterInvalid) {
+                if (randomCharacterObject.altColors?.length != 0 && randomCharacterObject.altColors != null) {
+                    const i = Math.floor(Math.random() * randomCharacterObject.altColors.length)
+                    character = {
+                        name: randomCharacterObject.altColors[i].name + ' ' + randomCharacterObject.name,
+                        imageURL: randomCharacterObject.altColors[i].imageURL
+                    };
+                } else {
+                    character = {
+                        name: randomCharacterObject.name,
+                        imageURL: randomCharacterObject.imageURL
+                    }
                 }
             }
-            characterInvalid = this.checkCharacterValidity(character);
         }
-        this.optionsService.CharacterSelected(this.playerNumber,character.name);
         return character;
     }
 
-    private checkCharacterValidity(character:any):boolean {
+    private checkCharacterValidity(character: Base): boolean {
         let invalid = false;
         if (this.options.allowMii == false) {
             if (character.name == "Mii") {
-                invalid = true;
+                return true;
+                
             }
         }
-        if (this.takenCharacters.indexOf(character.name) > 0) {
-            invalid = true;
-        }
+        invalid = (this.selections.find(o => o.character.name.includes(character.name)) != undefined ? true : false);
+        if(invalid) {console.log('duplicate found: ' + character.name)}
         return invalid;
     }
-    private checkVehicleValidity(vehicle:any):boolean {
-        let invalid = false;
-        if (this.options.allowBikes == false) {
-            
-        }
-        return invalid;
-    }
+
 }

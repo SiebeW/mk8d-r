@@ -22,17 +22,16 @@ export class OptionsComponent implements OnInit {
 
   private getMiiImageUrl() {
     let mii = {
-      Name: '',
-      HasAlternateColor: false,
-      ImageURL: ''
+      name: '',
+      imageURL: ''
     };
-    this.data.Characters.find(c => {
+    this.data.characters.find(c => {
       console.log(c);
-      if (c.Name == "Mii") {
+      if (c.name == "Mii") {
         mii = c;
       }
     })
-    return mii.ImageURL;
+    return mii.imageURL;
   }
 
 }
