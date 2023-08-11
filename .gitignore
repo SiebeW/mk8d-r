@@ -58,3 +58,5 @@ baseline.json
 
 # Husky
 .husky/_
+dist/mk8d-r/404.html
+dist/mk8d-r/index.html
