@@ -94,7 +94,7 @@ export class RandomKartComponent implements OnInit {
                     tire.name = 'Wooden'
                     break;
                 case 'Blue Standard':
-                    tire.name = 'Blue Normal'
+                    tire.name = 'Normal Blue'
                     break;
                 case 'Hot Monster':
                     tire.name = 'Funky Monster'
