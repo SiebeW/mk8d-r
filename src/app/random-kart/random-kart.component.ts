@@ -25,7 +25,8 @@ export class RandomKartComponent implements OnInit {
         allowBikes: true,
         allowKarts: true,
         allowQuads: true,
-        allowGolds: true
+        allowGolds: true,
+        localiseNames: 'EU'
     };
     public randomKart: Selection = {
         character: {
@@ -83,6 +84,26 @@ export class RandomKartComponent implements OnInit {
         let body = this.getKartComponent('body','bodies');
         let tire = this.getKartComponent('tires','tires');
         let glider = this.getKartComponent('glider','gliders');
+
+        if (this.options.localiseNames !== 'NA') {
+            switch (tire.name) {
+                case 'Standard':
+                    tire.name = 'Normal'
+                    break;
+                case 'Wood':
+                    tire.name = 'Wooden'
+                    break;
+                case 'Blue Standard':
+                    tire.name = 'Blue Normal'
+                    break;
+                case 'Hot Monster':
+                    tire.name = 'Funky Monster'
+                    break;
+                case 'Gold Standard':
+                    tire.name = 'Gold'
+                    break;
+            }
+        }
 
         const kart = {
             type: body.type,

@@ -12,7 +12,8 @@ export class OptionsService {
     allowBikes: true,
     allowKarts: true,
     allowQuads: true,
-    allowGolds: true
+    allowGolds: true,
+    localiseNames: 'EU'
   });
 
   private privateSelections: Selection[] = [];
