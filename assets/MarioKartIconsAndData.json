@@ -294,6 +294,22 @@
             "imageURL": "https://mario.wiki.gallery/images/0/00/MK8DX_Kamek_Icon.png"
         },
         {
+            "name": "Peachette",
+            "imageURL": "https://mario.wiki.gallery/images/5/5f/MK8_Peachette_Icon.png"
+        },
+        {
+            "name": "Diddy Kong",
+            "imageURL": "https://mario.wiki.gallery/images/8/82/MK8DX_Diddy_Kong_Icon.png"
+        },
+        {
+            "name": "Funky Kong",
+            "imageURL": "https://mario.wiki.gallery/images/6/66/MK8_Funky_Kong_Icon.png"
+        },
+        {
+            "name": "Pauline",
+            "imageURL": "https://mario.wiki.gallery/images/8/8f/MK8_Pauline_Icon.png"
+        },
+        {
             "name": "Birdo",
             "imageURL": "https://mario.wiki.gallery/images/f/f6/MK8D_Birdo_Icon.png",
             "altColors": [
@@ -355,7 +371,7 @@
                 "imageURL": "https://mario.wiki.gallery/images/8/84/StandardBikeBodyMK8.png"
             },
             {
-                "name": "Standard ATV",
+                "name": "Standard",
                 "type": "ATV",
                 "imageURL": "https://mario.wiki.gallery/images/2/23/StandardATVBodyMK8.png"
             },
@@ -483,11 +499,6 @@
                 "name": "Comet",
                 "type": "Bike",
                 "imageURL": "https://mario.wiki.gallery/images/0/0e/CometBodyMK8.png"
-            },
-            {
-                "name": "SportBike",
-                "type": "Bike",
-                "imageURL": "https://mario.wiki.gallery/images/f/fe/SportBikeBodyMK8.png"
             },
             {
                 "name": "The Duke",
