@@ -3,7 +3,7 @@
         <img class="player-number" src="{{this.playerNumberImg}}">
         <p>
             <strong class="character-strong">{{ this.randomKart.character.name }}</strong>
-            on a 
+            on {{this.randomKart.kart.body.startsWith("The ") ? '' : 'a'}} 
             <strong class="kart-body-strong">{{ this.randomKart.kart.body }}</strong><span>&nbsp;</span><strong class="kart-type-strong">{{ this.randomKart.kart.type }}</strong>,
             with
             <strong class="kart-tires-strong">{{ this.randomKart.kart.tires }}</strong>

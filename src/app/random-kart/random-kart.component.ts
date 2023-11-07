@@ -103,6 +103,10 @@ export class RandomKartComponent implements OnInit {
                     tire.name = 'Gold'
                     break;
             }
+            switch (body.type) {
+                case 'ATV':
+                        body.type = 'Quad';
+            }
         }
 
         const kart = {
