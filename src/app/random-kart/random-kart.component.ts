@@ -106,6 +106,7 @@ export class RandomKartComponent implements OnInit {
             switch (body.type) {
                 case 'ATV':
                         body.type = 'Quad';
+                        break;
             }
         }
 
