@@ -13,7 +13,8 @@ export class OptionsService {
     allowKarts: true,
     allowQuads: true,
     allowGolds: true,
-    localiseNames: 'EU'
+    allowDupes: false,
+    localiseNames: true
   });
 
   private privateSelections: Selection[] = [];
@@ -27,7 +28,14 @@ export class OptionsService {
 
   public changeOption(o: Options): void {
     this.optionsSource.next(o);
+    this.resetSelections();
   }
+
+  public resetSelections(): void {
+    this.privateSelections = []
+    this.selectionsArraySource.next([]);
+  }
+
   public selectionMade(player: number, selection: Selection): void {
     this.privateSelections.push(selection);
     this.selectionsArraySource.next(this.privateSelections);

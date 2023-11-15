@@ -26,7 +26,8 @@ export class RandomKartComponent implements OnInit {
         allowKarts: true,
         allowQuads: true,
         allowGolds: true,
-        localiseNames: 'EU'
+        allowDupes: false,
+        localiseNames: true
     };
     public randomKart: Selection = {
         character: {
@@ -85,7 +86,7 @@ export class RandomKartComponent implements OnInit {
         let tire = this.getKartComponent('tires','tires');
         let glider = this.getKartComponent('glider','gliders');
 
-        if (this.options.localiseNames !== 'NA') {
+        if (this.options.localiseNames) {
             switch (tire.name) {
                 case 'Standard':
                     tire.name = 'Normal'
@@ -103,10 +104,8 @@ export class RandomKartComponent implements OnInit {
                     tire.name = 'Gold'
                     break;
             }
-            switch (body.type) {
-                case 'ATV':
-                        body.type = 'Quad';
-                        break;
+            if (body.type === 'ATV') {
+                body.type = 'Quad';
             }
         }
 
@@ -125,13 +124,41 @@ export class RandomKartComponent implements OnInit {
     private getKartComponent(part:string, plural:string){
         let component:(VehiclePart);
         component = eval('this.data.vehicles.' + plural + '[Math.floor(Math.random() * this.data.vehicles.' + plural + '.length)]');
-        let valid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? false : true;
-        while (!valid) {
-            console.log('Duplicate found: ', component.name)
+        let invalid = this.checkComponentValidity(component, part);
+        // let valid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? false : true;
+        while (invalid) {
             component = eval('this.data.vehicles.' + plural + '[Math.floor(Math.random() * this.data.vehicles.' + plural + '.length)]');
-            valid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? false : true;
+            invalid = this.checkComponentValidity(component, part);
         }
         return component;
+    }
+
+    private checkComponentValidity(component: Base, part: string): boolean {
+        let invalid = false;
+        if (part === 'body') {
+            console.log(component.type);
+            if (!this.options.allowBikes) {
+                invalid = component.type === 'Bike' ? true : false;
+                if (invalid) {return true}
+            }
+            if (!this.options.allowKarts) {
+                invalid = component.type === 'Kart' ? true : false;
+                if (invalid) {return true}
+            }
+            if (!this.options.allowQuads) {
+                invalid = component.type === 'Quad' ? true : false;
+                if (invalid) {return true}
+            }
+        }
+        if (!this.options.allowGolds) {
+            invalid = component.name.includes("Gold") ? true : false;
+            if (invalid) {return true}
+        }
+        if (!this.options.allowDupes) {
+            invalid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? true : false;
+            if (invalid) {return true}
+        }
+        return invalid;
     }
 
     private randomizeCharacter() {
@@ -165,14 +192,17 @@ export class RandomKartComponent implements OnInit {
 
     private checkCharacterValidity(character: Base): boolean {
         let invalid = false;
-        if (this.options.allowMii == false) {
+        if (!this.options.allowMii) {
             if (character.name == "Mii") {
                 return true;
                 
             }
         }
-        invalid = (this.selections.find(o => o.character.name.includes(character.name)) != undefined ? true : false);
-        if(invalid) {console.log('duplicate found: ' + character.name)}
+        console.info('a check needs to be added for Gold Mario');
+        console.warn("make sure check below doesn't lock baby peach, peachette or gold peach out when peach is selected or vice versa");
+        if (!this.options.allowDupes) {
+            invalid = this.selections.find(o => o.character.name.includes(character.name)) != undefined ? true : false;
+        }
         return invalid;
     }
 

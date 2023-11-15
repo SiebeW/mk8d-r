@@ -4,7 +4,8 @@ interface IOptions {
     allowKarts: boolean;
     allowQuads: boolean;
     allowGolds: boolean;
-    localiseNames: string;
+    allowDupes: boolean;
+    localiseNames: boolean;
   }
   
   export class Options {
@@ -13,7 +14,8 @@ interface IOptions {
     public allowKarts: boolean = true;
     public allowQuads: boolean = true;
     public allowGolds: boolean = true;
-    public localiseNames: string = 'NA';
+    public allowDupes: boolean = false;
+    public localiseNames: boolean = true;
 
     constructor(options: IOptions) {
       Object.assign(this, options);

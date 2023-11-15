@@ -1,9 +1,71 @@
 <section>
-    <div>Checkbox to enable/disable miis goes here <img class="icon-size" src={{miiImage}}></div>
-    <div>Checkbox to enable/disable bikes goes here</div>
-    <div>Checkbox to enable/disable karts goes here</div>
-    <div>Checkbox to enable/disable quads/ATVs goes here</div>
-    <div>Checkbox to enable/disable gold unlocks goes here</div>
-    <div>Checkbox to allow/disallow duplicates goes here</div>
-    <div>Checkbox to set NA/EU names goes here</div>
+    <div class="row center">
+        <div class="option-row row">
+            <div>Miis</div>
+            <div class="container">
+                <label class="switch" for="allowMii">
+                    <input type="checkbox" id="allowMii" [(ngModel)]="this.options.allowMii" (change)="flipSwitch($event)" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="option-row row">
+            <div>Bikes</div>
+            <div class="container">
+                <label class="switch" for="allowBikes">
+                    <input type="checkbox" id="allowBikes" [(ngModel)]="this.options.allowBikes" (change)="flipSwitch($event)" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="option-row row">
+            <div>Karts</div>
+            <div class="container">
+                <label class="switch" for="allowKarts">
+                    <input type="checkbox" id="allowKarts" [(ngModel)]="this.options.allowKarts" selected="true" (change)="flipSwitch($event)" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="option-row row">
+            <div>Quads</div>
+            <div class="container">
+                <label class="switch" for="allowQuads">
+                    <input type="checkbox" id="allowQuads" [(ngModel)]="this.options.allowQuads" selected="true" (change)="flipSwitch($event)" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="option-row row">
+            <div>Gold parts</div>
+            <div class="container">
+                <label class="switch" for="allowGolds">
+                    <input type="checkbox" id="allowGolds" [(ngModel)]="this.options.allowGolds" selected="true" (change)="flipSwitch($event)" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="option-row row">
+            <div>Duplicates</div>
+            <div class="container">
+                <label class="switch" for="allowDupes">
+                    <input type="checkbox" id="allowDupes" [(ngModel)]="this.options.allowDupes" (change)="flipSwitch($event)" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+        <div class="option-row row">
+            <div>US</div>
+            <div class="container">
+                <label class="switch" for="localise">
+                    <input type="checkbox" id="localise" [(ngModel)]="this.options.localiseNames" (change)="flipSwitch($event)" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            <div style="padding-left: 0.5em">PAL</div>
+        </div>
+        <div class="option-row row">
+            <div (click)="refresh()">Randomise</div>
+        </div>
+    </div>
 </section>
