@@ -86,9 +86,6 @@ export class RandomKartComponent implements OnInit {
         let tire = this.getKartComponent('tires','tires');
         let glider = this.getKartComponent('glider','gliders');
 
-        console.log('LocaliseNames is ' + this.options.localiseNames);
-        console.log(body);
-
         if (this.options.localiseNames) {
             switch (tire.name) {
                 case 'Standard':
