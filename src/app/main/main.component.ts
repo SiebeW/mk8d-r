@@ -17,7 +17,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
       this.optionsService.selectionsArray.pipe(takeUntil(this.unsubscribeSubject)).subscribe((sel: Selection[]) => {
-        console.log(sel.length);
         if (sel.length === 4) {
           this.dateObj = new Date;
           this.now = this.dateObj.toLocaleDateString() + " at " + this.dateObj.toLocaleTimeString();
