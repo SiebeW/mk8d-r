@@ -58,23 +58,30 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
-.option-row {
+.option-type {
+  font-size: 0.75em;
+  padding-bottom: 0.25em;
+  opacity: 0.5;
+}
+.option-block {
   font-family: sans-serif;
   letter-spacing: 0.075em;
   background-color: #E6E6E6;
   display: inline-flex;
+  flex-direction: column;
   padding: 0.45em 1.5em 0.35em;
   margin: 0.25em;
   border-radius: 1em;
   align-items: center;
-  justify-content: space-between;
-  height: 25px;
-  max-height: 25px;
+  height: 40px;
+  max-height: 40px;
   justify-self: end;
   overflow: hidden;
+  position: relative;
 }
 
 .row {
+  display: flex;
   flex-direction: row;
 }
 
