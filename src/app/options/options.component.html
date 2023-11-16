@@ -1,18 +1,17 @@
-<section>
-    <div class="row center option-container">
-        <div class="option-block row">
-            <div>Miis</div>
-            <div class="container">
-                <label class="switch" for="allowMii">
-                    <input type="checkbox" id="allowMii" [(ngModel)]="this.options.allowMii"
-                        (change)="flipSwitch($event)" />
-                    <div class="slider round"></div>
-                </label>
-            </div>
+<section class="row center option-container">
+    <label for="allowMii" class="option-block row">
+        <div>Miis</div>
+        <div class="container">
+            <label class="switch" for="allowMii">
+                <input type="checkbox" id="allowMii" [(ngModel)]="this.options.allowMii"
+                    (change)="flipSwitch($event)" />
+                <div class="slider round"></div>
+            </label>
         </div>
-        <div class="option-block">
-            <label class="option-type">Body types</label>
-            <div class="row">
+    </label>
+    <label for="allowBikes" class="option-block">
+        <div class="option-type">Body types</div>
+        <div class="row">
             <div>Bikes</div>
             <div class="container">
                 <label class="switch" for="allowBikes">
@@ -21,11 +20,11 @@
                     <div class="slider round"></div>
                 </label>
             </div>
-            </div>
         </div>
-        <div class="option-block">
-            <label class="option-type">Body types</label>
-            <div class="row">
+    </label>
+    <label for="allowKarts" class="option-block">
+        <div class="option-type">Body types</div>
+        <div class="row">
             <div>Karts</div>
             <div class="container">
                 <label class="switch" for="allowKarts">
@@ -34,11 +33,11 @@
                     <div class="slider round"></div>
                 </label>
             </div>
-            </div>
         </div>
-        <div class="option-block">
-            <label class="option-type">Body types</label>
-            <div class="row">
+    </label>
+    <label for="allowQuads" class="option-block">
+        <div class="option-type">Body types</div>
+        <div class="row">
             <div>{{ options.localiseNames ? 'Quads' : 'ATVs'}}</div>
             <div class="container">
                 <label class="switch" for="allowQuads">
@@ -47,12 +46,12 @@
                     <div class="slider round"></div>
                 </label>
             </div>
-            </div>
         </div>
-        <div class="option-block">
-            <label class="option-type">Unlockables</label>
-            <div class="row">
-            <div>Gold parts</div>
+    </label>
+    <label for="allowGolds" class="option-block">
+        <div class="option-type">Gold parts & Mario</div>
+        <div class="row">
+            <div>Unlockables</div>
             <div class="container">
                 <label class="switch" for="allowGolds">
                     <input type="checkbox" id="allowGolds" [(ngModel)]="this.options.allowGolds" selected="true"
@@ -60,43 +59,42 @@
                     <div class="slider round"></div>
                 </label>
             </div>
-            </div>
         </div>
-        <div class="option-block row">
-            <div>Duplicates</div>
+    </label>
+    <label for="allowDupes" class="option-block row">
+        <div>Duplicates</div>
+        <div class="container">
+            <label class="switch" for="allowDupes">
+                <input type="checkbox" id="allowDupes" [(ngModel)]="this.options.allowDupes"
+                    (change)="flipSwitch($event)" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+    </label>
+    <label for="localise" class="option-block">
+        <div class="option-type">Localisation</div>
+        <div class="row">
+            <div>US</div>
             <div class="container">
-                <label class="switch" for="allowDupes">
-                    <input type="checkbox" id="allowDupes" [(ngModel)]="this.options.allowDupes"
+                <label class="switch" for="localise">
+                    <input type="checkbox" id="localise" [(ngModel)]="this.options.localiseNames"
                         (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
+            <div style="padding-left: 0.5em">PAL</div>
         </div>
-        <div class="option-block">
-            <label class="option-type">Localisation</label>
-            <div class="row">
-                <div>US</div>
-                <div class="container">
-                    <label class="switch" for="localise">
-                        <input type="checkbox" id="localise" [(ngModel)]="this.options.localiseNames"
-                            (change)="flipSwitch($event)" />
-                        <div class="slider round"></div>
-                    </label>
-                </div>
-                <div style="padding-left: 0.5em">PAL</div>
-            </div>
-        </div>
-        <div (click)="refresh()" class="option-block row">
-            <svg id="randomise-button" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 138.3 135.6"
-                style="enable-background:new 0 0 138.3 135.6;" xml:space="preserve">
-                <g id="Layer_2">
-                    <path d="M117.1,8.8L37.2,0L0,49.3l42.3,27.7l-5.1,53.7l58.1,4.8V85.4l42.9-14.3L117.1,8.8z M50.9,118.5l2.4-23.8l28.4,1.8l1.1,24.7
+    </label>
+    <div (click)="refresh()" class="option-block row">
+        <svg id="randomise-button" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 138.3 135.6"
+            style="enable-background:new 0 0 138.3 135.6;" xml:space="preserve">
+            <g id="Layer_2">
+                <path d="M117.1,8.8L37.2,0L0,49.3l42.3,27.7l-5.1,53.7l58.1,4.8V85.4l42.9-14.3L117.1,8.8z M50.9,118.5l2.4-23.8l28.4,1.8l1.1,24.7
                     L50.9,118.5z M81.7,73.1v11.7L53.9,83l2-21.6l33.5-10.1l-2.2-10.6l-29.9-2.4L42.7,60.7l-24-13.8l24.4-32.8l63.2,7.3l14.8,41
                     L81.7,73.1z" />
-                </g>
-            </svg>
-            <div>Reroll Selections</div>
-        </div>
+            </g>
+        </svg>
+        <div>Reroll Selections</div>
     </div>
 </section>

@@ -96,7 +96,13 @@ input:checked+.slider:before {
 }
 
 .option-container {
+  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
+}
+
+label {
+  user-select: none;
 }
