@@ -78,6 +78,7 @@ input:checked+.slider:before {
   justify-self: end;
   overflow: hidden;
   position: relative;
+  user-select: none;
 }
 
 .row {
@@ -101,8 +102,4 @@ input:checked+.slider:before {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-}
-
-label {
-  user-select: none;
 }

@@ -2,11 +2,11 @@
     <label for="allowMii" class="option-block row">
         <div>Miis</div>
         <div class="container">
-            <label class="switch" for="allowMii">
+            <div class="switch">
                 <input type="checkbox" id="allowMii" [(ngModel)]="this.options.allowMii"
                     (change)="flipSwitch($event)" />
                 <div class="slider round"></div>
-            </label>
+            </div>
         </div>
     </label>
     <label for="allowBikes" class="option-block">
@@ -14,11 +14,11 @@
         <div class="row">
             <div>Bikes</div>
             <div class="container">
-                <label class="switch" for="allowBikes">
+                <div class="switch">
                     <input type="checkbox" id="allowBikes" [(ngModel)]="this.options.allowBikes"
                         (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
-                </label>
+                </div>
             </div>
         </div>
     </label>
@@ -27,11 +27,11 @@
         <div class="row">
             <div>Karts</div>
             <div class="container">
-                <label class="switch" for="allowKarts">
+                <div class="switch">
                     <input type="checkbox" id="allowKarts" [(ngModel)]="this.options.allowKarts" selected="true"
                         (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
-                </label>
+                </div>
             </div>
         </div>
     </label>
@@ -40,11 +40,11 @@
         <div class="row">
             <div>{{ options.localiseNames ? 'Quads' : 'ATVs'}}</div>
             <div class="container">
-                <label class="switch" for="allowQuads">
+                <div class="switch">
                     <input type="checkbox" id="allowQuads" [(ngModel)]="this.options.allowQuads" selected="true"
                         (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
-                </label>
+                </div>
             </div>
         </div>
     </label>
@@ -53,22 +53,22 @@
         <div class="row">
             <div>Unlockables</div>
             <div class="container">
-                <label class="switch" for="allowGolds">
+                <div class="switch">
                     <input type="checkbox" id="allowGolds" [(ngModel)]="this.options.allowGolds" selected="true"
                         (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
-                </label>
+                </div>
             </div>
         </div>
     </label>
     <label for="allowDupes" class="option-block row">
         <div>Duplicates</div>
         <div class="container">
-            <label class="switch" for="allowDupes">
+            <div class="switch">
                 <input type="checkbox" id="allowDupes" [(ngModel)]="this.options.allowDupes"
                     (change)="flipSwitch($event)" />
                 <div class="slider round"></div>
-            </label>
+            </div>
         </div>
     </label>
     <label for="localise" class="option-block">
@@ -76,7 +76,7 @@
         <div class="row">
             <div>US</div>
             <div class="container">
-                <label class="switch" for="localise">
+                <label class="switch">
                     <input type="checkbox" id="localise" [(ngModel)]="this.options.localiseNames"
                         (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
