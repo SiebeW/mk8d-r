@@ -136,7 +136,6 @@ export class RandomKartComponent implements OnInit {
     private checkComponentValidity(component: Base, part: string): boolean {
         let invalid = false;
         if (part === 'body') {
-            console.log(component.type);
             if (!this.options.allowBikes) {
                 invalid = component.type === 'Bike' ? true : false;
                 if (invalid) {return true}
@@ -168,24 +167,24 @@ export class RandomKartComponent implements OnInit {
             name: '',
             imageURL: ''
         };
+
         while (characterInvalid) {
             const randomNumber = Math.floor(Math.random() * this.data.characters.length)
             const randomCharacterObject = this.data.characters[randomNumber]
-            characterInvalid = this.checkCharacterValidity(randomCharacterObject);
-            if (!characterInvalid) {
-                if (randomCharacterObject.altColors?.length != 0 && randomCharacterObject.altColors != null) {
-                    const i = Math.floor(Math.random() * randomCharacterObject.altColors.length)
-                    character = {
-                        name: randomCharacterObject.altColors[i].name + ' ' + randomCharacterObject.name,
-                        imageURL: randomCharacterObject.altColors[i].imageURL
-                    };
-                } else {
-                    character = {
-                        name: randomCharacterObject.name,
-                        imageURL: randomCharacterObject.imageURL
-                    }
+            if (randomCharacterObject.altColors?.length != 0 && randomCharacterObject.altColors != null) {
+                const i = Math.floor(Math.random() * randomCharacterObject.altColors.length)
+                character = {
+                    name: randomCharacterObject.altColors[i].name + ' ' + randomCharacterObject.name,
+                    imageURL: randomCharacterObject.altColors[i].imageURL
+                };
+            } else {
+                character = {
+                    name: randomCharacterObject.name,
+                    imageURL: randomCharacterObject.imageURL
                 }
             }
+            characterInvalid = this.checkCharacterValidity(character);
+        
         }
         return character;
     }
@@ -195,15 +194,14 @@ export class RandomKartComponent implements OnInit {
         if (!this.options.allowMii) {
             if (character.name == "Mii") {
                 return true;
-                
             }
         }
-        console.info('a check needs to be added for Gold Mario');
-        console.warn("make sure check below doesn't lock baby peach, peachette or gold peach out when peach is selected or vice versa");
+        if (!this.options.allowGolds && character.name === "Gold Mario") {
+            return true;
+        }
         if (!this.options.allowDupes) {
-            invalid = this.selections.find(o => o.character.name.includes(character.name)) != undefined ? true : false;
+            invalid = this.selections.find(o => o.character.name === character.name) != undefined ? true : false;
         }
         return invalid;
     }
-
 }

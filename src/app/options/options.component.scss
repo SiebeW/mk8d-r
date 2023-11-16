@@ -38,6 +38,7 @@
 
   .container {
     padding-left: 0.5em;
+    height: 1.15em;
   }
   
   input:checked + .slider {
@@ -61,11 +62,12 @@
     letter-spacing: 0.075em;
     background-color: #E6E6E6;
     display: inline-flex;
-    padding: 0.45em 1.5em 0.25em;
+    padding: 0.45em 1.5em 0.35em;
     margin: 0.25em;
     border-radius: 1em;
     align-items: center;
     justify-content: space-between;
+    height: 25px;
 }
 .row {
     flex-direction: row;

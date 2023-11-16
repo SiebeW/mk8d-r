@@ -54,18 +54,30 @@ export class OptionsComponent implements OnInit {
     const k = target.id as keyof Options;
     const v = target.checked;
     
-    const updatedOptions = { ...this.options, [k]: v};
-    const valid = this.checkOptionValidity(updatedOptions);
+    let updatedOptions = { ...this.options, [k]: v};
+    const valid = this.checkOptionValidity(updatedOptions,k);
 
     if(valid) {
       this.optionsService.changeOption(updatedOptions);
-    } else {
-      console.error('write code to revert last flipped checkbox back to its previous state')
     }
   }
 
-  private checkOptionValidity(options: Options): boolean {
+  private checkOptionValidity(options: Options, key: string): boolean {
     if (!options.allowBikes && !options.allowKarts && !options.allowQuads) {
+      let switchEl = document.getElementById(key) as HTMLInputElement;
+      switchEl.checked = true;
+      alert('At least one body type must be selected between Bikes, Karts and ' + (options.localiseNames ? 'Quads' : 'ATVs'));
+      switch(key) {
+        case 'allowBikes':
+          this.options.allowBikes = true;
+          break;
+        case 'allowKarts':
+          this.options.allowKarts = true;
+          break;
+        case 'allowQuads':
+          this.options.allowQuads = true;
+          break;
+      }
       return false;
     }
     return true;

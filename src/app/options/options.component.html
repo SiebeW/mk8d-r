@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="option-row row">
-            <div>Quads</div>
+            <div>{{ options.localiseNames ? 'Quads' : 'ATVs'}}</div>
             <div class="container">
                 <label class="switch" for="allowQuads">
                     <input type="checkbox" id="allowQuads" [(ngModel)]="this.options.allowQuads" selected="true" (change)="flipSwitch($event)" />
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="option-row row">
-            <div>Gold parts</div>
+            <div>Gold unlocks</div>
             <div class="container">
                 <label class="switch" for="allowGolds">
                     <input type="checkbox" id="allowGolds" [(ngModel)]="this.options.allowGolds" selected="true" (change)="flipSwitch($event)" />
