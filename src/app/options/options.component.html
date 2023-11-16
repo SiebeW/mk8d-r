@@ -1,10 +1,11 @@
 <section>
-    <div class="row center">
+    <div class="row center option-container">
         <div class="option-row row">
             <div>Miis</div>
             <div class="container">
                 <label class="switch" for="allowMii">
-                    <input type="checkbox" id="allowMii" [(ngModel)]="this.options.allowMii" (change)="flipSwitch($event)" />
+                    <input type="checkbox" id="allowMii" [(ngModel)]="this.options.allowMii"
+                        (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -13,7 +14,8 @@
             <div>Bikes</div>
             <div class="container">
                 <label class="switch" for="allowBikes">
-                    <input type="checkbox" id="allowBikes" [(ngModel)]="this.options.allowBikes" (change)="flipSwitch($event)" />
+                    <input type="checkbox" id="allowBikes" [(ngModel)]="this.options.allowBikes"
+                        (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -22,7 +24,8 @@
             <div>Karts</div>
             <div class="container">
                 <label class="switch" for="allowKarts">
-                    <input type="checkbox" id="allowKarts" [(ngModel)]="this.options.allowKarts" selected="true" (change)="flipSwitch($event)" />
+                    <input type="checkbox" id="allowKarts" [(ngModel)]="this.options.allowKarts" selected="true"
+                        (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -31,7 +34,8 @@
             <div>{{ options.localiseNames ? 'Quads' : 'ATVs'}}</div>
             <div class="container">
                 <label class="switch" for="allowQuads">
-                    <input type="checkbox" id="allowQuads" [(ngModel)]="this.options.allowQuads" selected="true" (change)="flipSwitch($event)" />
+                    <input type="checkbox" id="allowQuads" [(ngModel)]="this.options.allowQuads" selected="true"
+                        (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -40,7 +44,8 @@
             <div>Gold unlocks</div>
             <div class="container">
                 <label class="switch" for="allowGolds">
-                    <input type="checkbox" id="allowGolds" [(ngModel)]="this.options.allowGolds" selected="true" (change)="flipSwitch($event)" />
+                    <input type="checkbox" id="allowGolds" [(ngModel)]="this.options.allowGolds" selected="true"
+                        (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -49,7 +54,8 @@
             <div>Duplicates</div>
             <div class="container">
                 <label class="switch" for="allowDupes">
-                    <input type="checkbox" id="allowDupes" [(ngModel)]="this.options.allowDupes" (change)="flipSwitch($event)" />
+                    <input type="checkbox" id="allowDupes" [(ngModel)]="this.options.allowDupes"
+                        (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -58,14 +64,23 @@
             <div>US</div>
             <div class="container">
                 <label class="switch" for="localise">
-                    <input type="checkbox" id="localise" [(ngModel)]="this.options.localiseNames" (change)="flipSwitch($event)" />
+                    <input type="checkbox" id="localise" [(ngModel)]="this.options.localiseNames"
+                        (change)="flipSwitch($event)" />
                     <div class="slider round"></div>
                 </label>
             </div>
             <div style="padding-left: 0.5em">PAL</div>
         </div>
-        <div class="option-row row">
-            <div (click)="refresh()">Randomise</div>
+        <div (click)="refresh()" class="option-row row">
+            <svg id="randomise-button" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 138.3 135.6" style="enable-background:new 0 0 138.3 135.6;" xml:space="preserve">
+                <g id="Layer_2">
+                    <path d="M117.1,8.8L37.2,0L0,49.3l42.3,27.7l-5.1,53.7l58.1,4.8V85.4l42.9-14.3L117.1,8.8z M50.9,118.5l2.4-23.8l28.4,1.8l1.1,24.7
+                    L50.9,118.5z M81.7,73.1v11.7L53.9,83l2-21.6l33.5-10.1l-2.2-10.6l-29.9-2.4L42.7,60.7l-24-13.8l24.4-32.8l63.2,7.3l14.8,41
+                    L81.7,73.1z" />
+                </g>
+            </svg>
+            <div>Randomise</div>
         </div>
     </div>
 </section>

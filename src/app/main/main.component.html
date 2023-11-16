@@ -1,9 +1,11 @@
 <!-- <app-options></app-options> -->
 <section class="main-container">
-    <app-random-kart [playerNumber]='1'></app-random-kart>
-    <app-random-kart [playerNumber]='2'></app-random-kart>
-    <app-random-kart [playerNumber]='3'></app-random-kart>
-    <app-random-kart [playerNumber]='4'></app-random-kart>
+    <div id="player-selections-container">
+        <app-random-kart [playerNumber]='1'></app-random-kart>
+        <app-random-kart [playerNumber]='2'></app-random-kart>
+        <app-random-kart [playerNumber]='3'></app-random-kart>
+        <app-random-kart [playerNumber]='4'></app-random-kart>
+    </div>
     <app-options></app-options>
     <p class="timestamp">Generated on {{ this.now }}</p>
 </section>
