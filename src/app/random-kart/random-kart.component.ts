@@ -172,7 +172,7 @@ export class RandomKartComponent implements OnInit {
             const randomNumber = Math.floor(Math.random() * this.data.characters.length)
             const randomCharacterObject = this.data.characters[randomNumber]
             if (randomCharacterObject.altColors?.length != 0 && randomCharacterObject.altColors != null) {
-                const i = Math.floor(Math.random() * randomCharacterObject.altColors.length)
+                let i = Math.floor(Math.random() * randomCharacterObject.altColors.length)
                 character = {
                     name: randomCharacterObject.altColors[i].name + ' ' + randomCharacterObject.name,
                     imageURL: randomCharacterObject.altColors[i].imageURL
@@ -183,13 +183,13 @@ export class RandomKartComponent implements OnInit {
                     imageURL: randomCharacterObject.imageURL
                 }
             }
-            characterInvalid = this.checkCharacterValidity(character);
+            characterInvalid = this.checkCharacterValidity(character, randomCharacterObject);
         
         }
         return character;
     }
 
-    private checkCharacterValidity(character: Base): boolean {
+    private checkCharacterValidity(character: Base, randomCharacterObject: Base): boolean {
         let invalid = false;
         if (!this.options.allowMii) {
             if (character.name == "Mii") {
@@ -200,7 +200,10 @@ export class RandomKartComponent implements OnInit {
             return true;
         }
         if (!this.options.allowDupes) {
-            invalid = this.selections.find(o => o.character.name === character.name) != undefined ? true : false;
+            invalid = this.selections.find(o => o.character.name === randomCharacterObject.name) != undefined ? true : false;
+            if(invalid) {
+                return true;
+            }
         }
         return invalid;
     }
