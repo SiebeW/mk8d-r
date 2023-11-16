@@ -86,6 +86,9 @@ export class RandomKartComponent implements OnInit {
         let tire = this.getKartComponent('tires','tires');
         let glider = this.getKartComponent('glider','gliders');
 
+        console.log('LocaliseNames is ' + this.options.localiseNames);
+        console.log(body);
+
         if (this.options.localiseNames) {
             switch (tire.name) {
                 case 'Standard':
@@ -107,6 +110,27 @@ export class RandomKartComponent implements OnInit {
             if (body.type === 'ATV') {
                 body.type = 'Quad';
             }
+        } else {
+            switch (tire.name) {
+                case 'Normal':
+                    tire.name = 'Standard'
+                    break;
+                case 'Wooden':
+                    tire.name = 'Wood'
+                    break;
+                case 'Normal Blue':
+                    tire.name = 'Blue Standard'
+                    break;
+                case 'Funky Monster':
+                    tire.name = 'Hot Monster'
+                    break;
+                case 'Gold':
+                    tire.name = 'Gold Standard'
+                    break;
+            }
+            if (body.type === 'Quad') {
+                body.type = 'ATV';
+            }
         }
 
         const kart = {
@@ -125,7 +149,6 @@ export class RandomKartComponent implements OnInit {
         let component:(VehiclePart);
         component = eval('this.data.vehicles.' + plural + '[Math.floor(Math.random() * this.data.vehicles.' + plural + '.length)]');
         let invalid = this.checkComponentValidity(component, part);
-        // let valid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? false : true;
         while (invalid) {
             component = eval('this.data.vehicles.' + plural + '[Math.floor(Math.random() * this.data.vehicles.' + plural + '.length)]');
             invalid = this.checkComponentValidity(component, part);
