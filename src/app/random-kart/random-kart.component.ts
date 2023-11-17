@@ -82,7 +82,6 @@ export class RandomKartComponent implements OnInit {
     }
 
     private randomizeKart() {
-
         let body = this.getKartComponent('body', 'bodies');
         let tire = this.getKartComponent('tires', 'tires');
         let glider = this.getKartComponent('glider', 'gliders');
@@ -155,30 +154,25 @@ export class RandomKartComponent implements OnInit {
     }
 
     private checkComponentValidity(component: Base, part: string): boolean {
-        let invalid = false;
         if (part === 'body') {
-            if (!this.options.allowBikes) {
-                invalid = component.type === 'Bike' ? true : false;
-                if (invalid) { return true }
+            if (!this.options.allowBikes && component.type === 'Bike') {
+                return true
             }
-            if (!this.options.allowKarts) {
-                invalid = component.type === 'Kart' ? true : false;
-                if (invalid) { return true }
+            if (!this.options.allowKarts && component.type === 'Kart') {
+                return true 
             }
-            if (!this.options.allowQuads) {
-                invalid = component.type === 'Quad' ? true : false;
-                if (invalid) { return true }
+            if (component.type === 'ATV') {component.type = 'Quad'}; 
+            if (!this.options.allowQuads && component.type === 'Quad') {
+                return true
             }
         }
-        if (!this.options.allowGolds) {
-            invalid = component.name.includes("Gold") ? true : false;
-            if (invalid) { return true }
+        if (!this.options.allowGolds && component.name.includes("Gold")) {
+            return true;
         }
-        if (!this.options.allowDupes) {
-            invalid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? true : false;
-            if (invalid) { return true }
+        if (!this.options.allowDupes && (this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined)) {
+            return true
         }
-        return invalid;
+        return false;
     }
 
     private randomizeCharacter() {
