@@ -7,5 +7,5 @@
         <app-random-kart [playerNumber]='4'></app-random-kart>
     </div>
     <app-options></app-options>
-    <p class="timestamp">Generated on {{ this.now }}</p>
+    <p class="timestamp">Generated on {{ this.dateObj.toLocaleDateString() }} at <span [ngClass]="checkFor1337()">{{ this.hoursminutes }}</span>:{{ this.formatNumberIfShort(this.dateObj.getSeconds()) }}</p>
 </section>

@@ -17,3 +17,21 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.elite-gold {
+   font-weight: bold;
+   background-image: linear-gradient(
+	to bottom,
+	#462523 0,
+    #cb9b51 22%, 
+	#f6e27a 45%,
+	#e1d63d 50%,
+	rgb(255, 225, 75) 55%,
+	#cb9b51 78%,
+	#462523 100%
+	);
+   color:transparent;
+   -webkit-background-clip:text;
+   background-clip:text;
+   text-shadow: rgba(0,0,0,0.25);
+}
