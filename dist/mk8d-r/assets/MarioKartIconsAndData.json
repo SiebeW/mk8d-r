@@ -282,34 +282,6 @@
             "imageURL": "https://mario.wiki.gallery/images/2/29/MK8_Dry_Bowser_Icon.png"
         },
         {
-            "name": "Petey Piranha",
-            "imageURL": "https://mario.wiki.gallery/images/8/86/MK8DX_Petey_Piranha_Icon.png"
-        },
-        {
-            "name": "Wiggler",
-            "imageURL": "https://mario.wiki.gallery/images/7/7e/MK8DX_Wiggler_Icon.png"
-        },
-        {
-            "name": "Kamek",
-            "imageURL": "https://mario.wiki.gallery/images/0/00/MK8DX_Kamek_Icon.png"
-        },
-        {
-            "name": "Peachette",
-            "imageURL": "https://www.mariowiki.com/images/f/fd/MK8DX_Peachette_Icon.png"
-        },
-        {
-            "name": "Diddy Kong",
-            "imageURL": "https://www.mariowiki.com/images/8/82/MK8DX_Diddy_Kong_Icon.png"
-        },
-        {
-            "name": "Funky Kong",
-            "imageURL": "https://www.mariowiki.com/images/4/4a/MK8DX_Funky_Kong_Icon.png"
-        },
-        {
-            "name": "Pauline",
-            "imageURL": "https://www.mariowiki.com/images/d/dd/MK8DX_Pauline_Icon.png"
-        },
-        {
             "name": "Birdo",
             "imageURL": "https://mario.wiki.gallery/images/f/f6/MK8D_Birdo_Icon.png",
             "altColors": [
@@ -350,7 +322,43 @@
                     "name":"Yellow",
                     "imageURL":"https://mario.wiki.gallery/images/2/28/MK8D_Birdo_Yellow_Icon.png"
                 }
-            ]
+            ],
+            "DLC": "Wave 4"
+        },
+        {
+            "name": "Petey Piranha",
+            "imageURL": "https://mario.wiki.gallery/images/8/86/MK8DX_Petey_Piranha_Icon.png",
+            "DLC": "Wave 5"
+        },
+        {
+            "name": "Wiggler",
+            "imageURL": "https://mario.wiki.gallery/images/7/7e/MK8DX_Wiggler_Icon.png",
+            "DLC": "Wave 5"
+        },
+        {
+            "name": "Kamek",
+            "imageURL": "https://mario.wiki.gallery/images/0/00/MK8DX_Kamek_Icon.png",
+            "DLC": "Wave 5"
+        },
+        {
+            "name": "Peachette",
+            "imageURL": "https://www.mariowiki.com/images/f/fd/MK8DX_Peachette_Icon.png",
+            "DLC": "Wave 6"
+        },
+        {
+            "name": "Diddy Kong",
+            "imageURL": "https://www.mariowiki.com/images/8/82/MK8DX_Diddy_Kong_Icon.png",
+            "DLC": "Wave 6"
+        },
+        {
+            "name": "Funky Kong",
+            "imageURL": "https://www.mariowiki.com/images/4/4a/MK8DX_Funky_Kong_Icon.png",
+            "DLC": "Wave 6"
+        },
+        {
+            "name": "Pauline",
+            "imageURL": "https://www.mariowiki.com/images/d/dd/MK8DX_Pauline_Icon.png",
+            "DLC": "Wave 6"
         }
     ],
     "vehicles": {
