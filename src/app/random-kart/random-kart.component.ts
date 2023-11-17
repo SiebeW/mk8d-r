@@ -220,9 +220,21 @@ export class RandomKartComponent implements OnInit {
             return true;
         }
         if (!this.options.allowDupes) {
-            invalid = this.selections.find(o => o.character.name === randomCharacterObject.name) != undefined ? true : false;
-            if(invalid) {
-                return true;
+            const includes = this.selections.find(o => o.character.name.includes(randomCharacterObject.name)) != undefined ? true : false;
+            if (includes) {
+                const altColorLength = randomCharacterObject.altColors?.length ? randomCharacterObject.altColors?.length : 0;
+                if (altColorLength > 0) {
+                    let colorFound: boolean = false;
+                    randomCharacterObject.altColors?.forEach((color) => {
+                        let found = this.selections.find(o => o.character.name.includes(color.name)) != undefined ? true : false;
+                        if (found) {
+                            colorFound = true;
+                        }
+                    })
+                    if (colorFound) { return true }
+                } {
+                    return true;
+                }
             }
         }
         return invalid;
