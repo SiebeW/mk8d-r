@@ -224,14 +224,17 @@ export class RandomKartComponent implements OnInit {
                 if (altColorLength > 0) {
                     let colorFound: boolean = false;
                     randomCharacterObject.altColors?.forEach((color) => {
-                        let found = this.selections.find(o => o.character.name.includes(color.name)) != undefined ? true : false;
+                        const found = this.selections.find(o => o.character.name.includes(color.name)) != undefined ? true : false;
                         if (found) {
                             colorFound = true;
                         }
                     })
                     if (colorFound) { return true }
-                } {
-                    return true;
+                } else {
+                    const matched = this.selections.find(o => o.character.name === character.name);
+                    if (matched) {
+                        return true;
+                    }
                 }
             }
         }
