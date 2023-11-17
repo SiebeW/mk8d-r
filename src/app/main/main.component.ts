@@ -30,7 +30,6 @@ export class MainComponent implements OnInit {
     return '';
   }
   public formatNumberIfShort(x: number): string {
-    console.log(x + ' is this many characters long: ' + x.toString().length);
     const fixedNumber = x.toString().length === 1 ? '0'.concat(x.toString()) : x.toString();
     return fixedNumber;
   }

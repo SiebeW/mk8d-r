@@ -15,25 +15,26 @@ export class OptionsComponent implements OnInit {
   private data: MarioKartData = MarioKartJson;
   public miiImage = this.getMiiImageUrl()
   public options: Options = {
-      allowMii: false,
-      allowBikes: true,
-      allowKarts: true,
-      allowQuads: true,
-      allowGolds: true,
-      allowDupes: false,
-      localiseNames: true // means EU
+    allowDLC: true,
+    allowMii: false,
+    allowBikes: true,
+    allowKarts: true,
+    allowQuads: true,
+    allowGolds: true,
+    allowDupes: false,
+    localiseNames: true // means EU
   };
 
   constructor(private optionsService: OptionsService) { }
 
   ngOnInit(): void {
-      this.optionsService.options.pipe(takeUntil(this.unsubscribeSubject)).subscribe(o => {
-          this.options = o;
-      });
+    this.optionsService.options.pipe(takeUntil(this.unsubscribeSubject)).subscribe(o => {
+      this.options = o;
+    });
   }
   ngOnDestroy() {
-      this.unsubscribeSubject.next(true);
-      this.unsubscribeSubject.unsubscribe;
+    this.unsubscribeSubject.next(true);
+    this.unsubscribeSubject.unsubscribe;
   };
 
   private getMiiImageUrl() {
@@ -53,11 +54,11 @@ export class OptionsComponent implements OnInit {
     const target = e.target as HTMLInputElement
     const k = target.id as keyof Options;
     const v = target.checked;
-    
-    let updatedOptions = { ...this.options, [k]: v};
-    const valid = this.checkOptionValidity(updatedOptions,k);
 
-    if(valid) {
+    let updatedOptions = { ...this.options, [k]: v };
+    const valid = this.checkOptionValidity(updatedOptions, k);
+
+    if (valid) {
       this.optionsService.changeOption(updatedOptions);
     }
   }
@@ -67,7 +68,7 @@ export class OptionsComponent implements OnInit {
       let switchEl = document.getElementById(key) as HTMLInputElement;
       switchEl.checked = true;
       alert('At least one body type must be selected between Bikes, Karts and ' + (options.localiseNames ? 'Quads' : 'ATVs'));
-      switch(key) {
+      switch (key) {
         case 'allowBikes':
           this.options.allowBikes = true;
           break;

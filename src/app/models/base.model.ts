@@ -8,6 +8,7 @@ interface IBase {
     imageURL: string;
     altColors?: IBaseSimple[];
     type?: string;
+    DLC?: string;
   }
   
   export class Base {
@@ -15,6 +16,7 @@ interface IBase {
     public imageURL: string = ''
     public altColors?: IBaseSimple[];
     public type?: string = '';
+    public DLC?: string = '';
 
     constructor(base: IBase) {
       Object.assign(this, base);

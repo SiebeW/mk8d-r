@@ -21,6 +21,7 @@ export class RandomKartComponent implements OnInit {
         p4: 'https://i.imgur.com/aaSTw5Q.png'
     }
     private options: Options = {
+        allowDLC: true,
         allowMii: false,
         allowBikes: true,
         allowKarts: true,
@@ -76,15 +77,15 @@ export class RandomKartComponent implements OnInit {
             this.randomKart.kart = this.randomizeKart();
             this.randomKart.character = this.randomizeCharacter();
             selection = this.randomKart;
-            this.optionsService.selectionMade(this.playerNumber,selection);
+            this.optionsService.selectionMade(this.playerNumber, selection);
         }
     }
 
     private randomizeKart() {
 
-        let body = this.getKartComponent('body','bodies');
-        let tire = this.getKartComponent('tires','tires');
-        let glider = this.getKartComponent('glider','gliders');
+        let body = this.getKartComponent('body', 'bodies');
+        let tire = this.getKartComponent('tires', 'tires');
+        let glider = this.getKartComponent('glider', 'gliders');
 
         if (this.options.localiseNames) {
             switch (tire.name) {
@@ -142,8 +143,8 @@ export class RandomKartComponent implements OnInit {
         return kart;
     }
 
-    private getKartComponent(part:string, plural:string){
-        let component:(VehiclePart);
+    private getKartComponent(part: string, plural: string) {
+        let component: (VehiclePart);
         component = eval('this.data.vehicles.' + plural + '[Math.floor(Math.random() * this.data.vehicles.' + plural + '.length)]');
         let invalid = this.checkComponentValidity(component, part);
         while (invalid) {
@@ -158,24 +159,24 @@ export class RandomKartComponent implements OnInit {
         if (part === 'body') {
             if (!this.options.allowBikes) {
                 invalid = component.type === 'Bike' ? true : false;
-                if (invalid) {return true}
+                if (invalid) { return true }
             }
             if (!this.options.allowKarts) {
                 invalid = component.type === 'Kart' ? true : false;
-                if (invalid) {return true}
+                if (invalid) { return true }
             }
             if (!this.options.allowQuads) {
                 invalid = component.type === 'Quad' ? true : false;
-                if (invalid) {return true}
+                if (invalid) { return true }
             }
         }
         if (!this.options.allowGolds) {
             invalid = component.name.includes("Gold") ? true : false;
-            if (invalid) {return true}
+            if (invalid) { return true }
         }
         if (!this.options.allowDupes) {
             invalid = this.selections.find(o => (eval('o.kart.' + part) == component.name)) != undefined ? true : false;
-            if (invalid) {return true}
+            if (invalid) { return true }
         }
         return invalid;
     }
@@ -204,7 +205,7 @@ export class RandomKartComponent implements OnInit {
                 }
             }
             characterInvalid = this.checkCharacterValidity(character, randomCharacterObject);
-        
+
         }
         return character;
     }
@@ -217,6 +218,9 @@ export class RandomKartComponent implements OnInit {
             }
         }
         if (!this.options.allowGolds && character.name === "Gold Mario") {
+            return true;
+        }
+        if (!this.options.allowDLC && randomCharacterObject.DLC != null) {
             return true;
         }
         if (!this.options.allowDupes) {

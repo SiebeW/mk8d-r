@@ -1,4 +1,5 @@
 interface IOptions {
+    allowDLC: boolean;
     allowMii:  boolean;
     allowBikes: boolean;
     allowKarts: boolean;
@@ -9,6 +10,7 @@ interface IOptions {
   }
   
   export class Options {
+    public allowDLC: boolean = true;
     public allowMii:  boolean = false;
     public allowBikes: boolean = true;
     public allowKarts: boolean = true;

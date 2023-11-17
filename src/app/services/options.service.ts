@@ -8,6 +8,7 @@ import { Selection } from '../models/selection.model';
 })
 export class OptionsService {
   private optionsSource = new BehaviorSubject<Options>({
+    allowDLC: true,
     allowMii: false,
     allowBikes: true,
     allowKarts: true,
