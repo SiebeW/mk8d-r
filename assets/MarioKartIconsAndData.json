@@ -278,6 +278,14 @@
             "imageURL": "https://mario.wiki.gallery/images/2/20/MK8_Isabelle_Icon.png"
         },
         {
+            "name": "Dry Bones",
+            "imageURL": "https://www.mariowiki.com/images/3/3f/MK8DX_Dry_Bones_Icon.png"
+        },
+        {
+            "name": "Bowser Jr.",
+            "imageURL": "https://www.mariowiki.com/images/2/26/MK8_Bowser_Jr_Icon.png"
+        },
+        {
             "name": "Dry Bowser",
             "imageURL": "https://mario.wiki.gallery/images/2/29/MK8_Dry_Bowser_Icon.png"
         },
@@ -324,6 +332,10 @@
                 }
             ],
             "DLC": "Wave 4"
+        },
+        {
+            "name": "King Boo",
+            "imageURL": "https://www.mariowiki.com/images/1/1d/MK8DX_King_Boo_Icon.png"
         },
         {
             "name": "Petey Piranha",
