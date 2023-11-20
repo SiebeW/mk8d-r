@@ -381,29 +381,9 @@
                 "imageURL": "https://mario.wiki.gallery/images/0/05/StandardKartBodyMK8.png"
             },
             {
-                "name": "Gold Standard",
-                "type": "Kart",
-                "imageURL": "https://mario.wiki.gallery/images/f/fe/Gold_Standard.png"
-            },
-            {
-                "name": "Standard",
-                "type": "Bike",
-                "imageURL": "https://mario.wiki.gallery/images/8/84/StandardBikeBodyMK8.png"
-            },
-            {
-                "name": "Standard",
-                "type": "ATV",
-                "imageURL": "https://mario.wiki.gallery/images/2/23/StandardATVBodyMK8.png"
-            },
-            {
                 "name": "Pipe Frame",
                 "type": "Kart",
                 "imageURL": "https://mario.wiki.gallery/images/d/d1/PipeFrameBodyMK8.png"
-            },
-            {
-                "name": "Koopa Clown",
-                "type": "Kart",
-                "imageURL": "https://mario.wiki.gallery/images/7/70/MK8DX_Koopa_Clown.png"
             },
             {
                 "name": "Mach 8",
@@ -419,11 +399,6 @@
                 "name": "Cat Cruiser",
                 "type": "Kart",
                 "imageURL": "https://mario.wiki.gallery/images/f/f4/CatCruiserBodyMK8.png"
-            },
-            {
-                "name": "B Dasher",
-                "type": "Kart",
-                "imageURL": "https://mario.wiki.gallery/images/1/15/ZeldaMK8Bdasher.png"
             },
             {
                 "name": "Circuit Special",
@@ -466,14 +441,9 @@
                 "imageURL": "https://mario.wiki.gallery/images/f/f8/SportsCoupeMK8.png"
             },
             {
-                "name": "Sports",
-                "type": "Bike",
-                "imageURL": "https://mario.wiki.gallery/images/f/fe/SportBikeBodyMK8.png"
-            },
-            {
-                "name": "Inkstriker",
-                "type": "ATV",
-                "imageURL": "https://mario.wiki.gallery/images/e/eb/MK8DX_Inkstriker.png"
+                "name": "Gold Standard",
+                "type": "Kart",
+                "imageURL": "https://mario.wiki.gallery/images/f/fe/Gold_Standard.png"
             },
             {
                 "name": "GLA",
@@ -496,14 +466,14 @@
                 "imageURL": "https://mario.wiki.gallery/images/f/f6/MK8BlueFalcon.png"
             },
             {
-                "name": "B-Dasher",
-                "type": "Kart",
-                "imageURL": "https://mario.wiki.gallery/images/1/15/ZeldaMK8Bdasher.png"
-            },
-            {
                 "name": "Tanooki",
                 "type": "Kart",
                 "imageURL": "https://mario.wiki.gallery/images/7/76/MK8_Tanooki_Buggy_Sprite.png"
+            },
+            {
+                "name": "B-Dasher",
+                "type": "Kart",
+                "imageURL": "https://mario.wiki.gallery/images/1/15/ZeldaMK8Bdasher.png"
             },
             {
                 "name": "Streetle",
@@ -516,9 +486,14 @@
                 "imageURL": "https://mario.wiki.gallery/images/c/cd/MK8PWing.png"
             },
             {
-                "name": "Comet",
+                "name": "Koopa Clown",
+                "type": "Kart",
+                "imageURL": "https://mario.wiki.gallery/images/7/70/MK8DX_Koopa_Clown.png"
+            },
+            {
+                "name": "Standard",
                 "type": "Bike",
-                "imageURL": "https://mario.wiki.gallery/images/0/0e/CometBodyMK8.png"
+                "imageURL": "https://mario.wiki.gallery/images/8/84/StandardBikeBodyMK8.png"
             },
             {
                 "name": "The Duke",
@@ -541,6 +516,26 @@
                 "imageURL": "https://mario.wiki.gallery/images/1/18/MrScootyBodyMK8.png"
             },
             {
+                "name": "Master Cycle Zero",
+                "type": "Bike",
+                "imageURL": "https://mario.wiki.gallery/images/2/26/MK8D_Master_Cycle_Zero.png"
+            },
+            {
+                "name": "City Tripper",
+                "type": "Bike",
+                "imageURL": "https://mario.wiki.gallery/images/b/be/MK8_Light-Green_City_Tripper.png"
+            },
+            {
+                "name": "Comet",
+                "type": "Bike",
+                "imageURL": "https://mario.wiki.gallery/images/0/0e/CometBodyMK8.png"
+            },
+            {
+                "name": "Sport",
+                "type": "Bike",
+                "imageURL": "https://mario.wiki.gallery/images/f/fe/SportBikeBodyMK8.png"
+            },
+            {
                 "name": "Jet",
                 "type": "Bike",
                 "imageURL": "https://mario.wiki.gallery/images/1/12/JetBikeBodyMK8.png"
@@ -556,14 +551,9 @@
                 "imageURL": "https://mario.wiki.gallery/images/8/8a/MK8MasterCycle.png"
             },
             {
-                "name": "Master Cycle Zero",
-                "type": "Bike",
-                "imageURL": "https://mario.wiki.gallery/images/2/26/MK8D_Master_Cycle_Zero.png"
-            },
-            {
-                "name": "City Tripper",
-                "type": "Bike",
-                "imageURL": "https://mario.wiki.gallery/images/b/be/MK8_Light-Green_City_Tripper.png"
+                "name": "Standard",
+                "type": "ATV",
+                "imageURL": "https://mario.wiki.gallery/images/2/23/StandardATVBodyMK8.png"
             },
             {
                 "name": "Wild Wiggler",
@@ -584,6 +574,11 @@
                 "name": "Splat Buggy",
                 "type": "ATV",
                 "imageURL": "https://mario.wiki.gallery/images/6/63/MK8DX_Splat_Buggy.png"
+            },
+            {
+                "name": "Inkstriker",
+                "type": "ATV",
+                "imageURL": "https://mario.wiki.gallery/images/e/eb/MK8DX_Inkstriker.png"
             }
         ],
         "tires": [
