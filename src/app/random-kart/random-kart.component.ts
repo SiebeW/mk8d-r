@@ -104,6 +104,9 @@ export class RandomKartComponent implements OnInit {
                     tire.name = 'Gold'
                     break;
             }
+            if (body.name === 'Sneeker') {
+                body.name = 'Bounder';
+            }
             if (body.type === 'ATV') {
                 body.type = 'Quad';
             }
@@ -124,6 +127,9 @@ export class RandomKartComponent implements OnInit {
                 case 'Gold':
                     tire.name = 'Gold Standard'
                     break;
+            }
+            if (body.name === 'Bounder') {
+                body.name = 'Sneeker';
             }
             if (body.type === 'Quad') {
                 body.type = 'ATV';
