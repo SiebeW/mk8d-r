@@ -15,9 +15,9 @@ import { Base } from '../models/base.model';
 export class RandomKartComponent implements OnInit {
     private unsubscribeSubject: Subject<boolean> = new Subject<boolean>;
     private playerImgs = {
-        p1: 'https://i.imgur.com/lyIvwVJ.png',
+        p1: 'https://i.imgur.com/rhLdXfd.png',
         p2: 'https://i.imgur.com/xztxn4W.png',
-        p3: 'https://i.imgur.com/2r0rKF3.png',
+        p3: 'https://i.imgur.com/z2cqdwl.png',
         p4: 'https://i.imgur.com/aaSTw5Q.png'
     }
     private options: Options = {
